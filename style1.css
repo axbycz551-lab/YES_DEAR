@@ -1,27 +1,25 @@
-/* Reset */
 *,
-*::before,
-*::after {
-  margin: 0;
+*::after,
+*::before {
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
-/* Root */
 :root {
-  --dark-color: #ffffff;
+  --dark-color: #000;
 }
 
-/* Body */
 body {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
   min-height: 100vh;
-  background-color: #000;
-  overflow-x: hidden;
-  font-family: Arial, sans-serif;
-  perspective: 1000px;
+  overflow: hidden;
+  font-family: "Segoe UI", sans-serif;
 }
 
-/* Background Section */
+/* FULL SCREEN BACKGROUND */
 .night {
   position: fixed;
   inset: 0;
@@ -29,23 +27,19 @@ body {
 
   background:
     linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-    url("small.jpeg") center/contain no-repeat;
+    url("small.jpeg") center/cover no-repeat;
 
-  filter: blur(0.1vmin);
+  filter: blur(0.2vmin);
 }
 
-/* Flowers Container */
+/* FLOWERS CONTAINER */
 .flowers {
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%) scale(0.9);
-  width: 100%;
-  pointer-events: none;
-  z-index: 10;
+  position: relative;
+  transform: scale(0.9);
+  margin-bottom: 5vh;
 }
 
-/* Flower Base */
+/* FLOWER BASE */
 .flower {
   position: absolute;
   bottom: 0;
@@ -54,130 +48,148 @@ body {
   --fl-speed: 0.8s;
 }
 
-/* Position Flowers */
-.flower--1 { left: 45%; }
-.flower--2 { left: 55%; }
-.flower--3 { left: 50%; }
-
-/* Stem */
-.flower__line {
-  height: 55vmin;
-  width: 1.5vmin;
-
-  background-image:
-    linear-gradient(to left, rgba(0,0,0,0.2), transparent, rgba(255,255,255,0.2)),
-    linear-gradient(to top, transparent 10%, #14757a, #39c6d6);
-
-  box-shadow: inset 0 0 2px rgba(0,0,0,0.5);
-
-  animation: grow-flower 4s backwards;
+/* FLOWER POSITIONS */
+.flower--1 {
+  left: 40%;
+  animation: moving-flower-1 4s linear infinite;
 }
 
-/* Petals */
+.flower--2 {
+  left: 50%;
+  transform: rotate(15deg);
+  animation: moving-flower-2 4s linear infinite;
+}
+
+.flower--3 {
+  left: 60%;
+  transform: rotate(-15deg);
+  animation: moving-flower-3 4s linear infinite;
+}
+
+/* STEM */
+.flower__line {
+  height: 55vmin;
+  width: 1.3vmin;
+  background: linear-gradient(to top, #0f7a7a, #39c6d6);
+  animation: grow-flower 3s backwards;
+}
+
+/* PETALS */
 .flower__leaf {
   position: absolute;
   bottom: 0;
   left: 50%;
-  width: 8vmin;
-  height: 11vmin;
-
-  border-radius: 51% 49% 47% 53% / 44% 45% 55% 69%;
-  background: linear-gradient(to top, #ff0404, #ff0000);
-
+  width: 7vmin;
+  height: 10vmin;
+  border-radius: 50%;
+  background: linear-gradient(to top, #ff0040, #ff3366);
   transform-origin: bottom center;
   opacity: 0.9;
-
-  box-shadow: inset 0 0 2vmin rgba(255,255,255,0.5);
 }
 
-/* Center */
+.flower__leaf--1 { transform: translate(-50%,0) rotate(0deg); }
+.flower__leaf--2 { transform: translate(-50%,0) rotate(90deg); }
+.flower__leaf--3 { transform: translate(-50%,0) rotate(180deg); }
+.flower__leaf--4 { transform: translate(-50%,0) rotate(270deg); }
+
+/* CENTER */
 .flower__white-circle {
   position: absolute;
-  left: -3.5vmin;
-  top: -3vmin;
-  width: 9vmin;
-  height: 4vmin;
+  left: -2vmin;
+  top: -2vmin;
+  width: 5vmin;
+  height: 5vmin;
   border-radius: 50%;
-  background-color: #34c96e;
+  background: gold;
 }
 
-/* Lights */
-.flower__light {
-  position: absolute;
-  bottom: 0;
-  width: 1vmin;
-  height: 1vmin;
-  border-radius: 50%;
-  background: #fffb00;
+/* MESSAGE BOX */
+.love-box {
+  max-width: 90%;
+  width: 420px;
+  padding: 25px;
 
-  filter: blur(0.2vmin);
-  animation: light-float 4s linear infinite;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+
+  border-radius: 20px;
+  border: 2px solid #ff4d6d;
+
+  box-shadow: 0 0 25px #ff4d6d;
+
+  text-align: center;
+  color: #fff;
+
+  margin-bottom: 20vh;
 }
 
-.flower__light:nth-child(odd) {
-  background: #23f0ff;
+/* TEXT */
+.love-box p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #ffd1dc;
 }
 
-/* Animations */
+/* BUTTON */
+.love-btn {
+  margin-top: 20px;
 
+  background: linear-gradient(135deg,#ff4d6d,#ff1f5a);
+  color: white;
+
+  border: none;
+  padding: 12px 28px;
+
+  border-radius: 30px;
+  font-size: 18px;
+
+  cursor: pointer;
+  transition: 0.3s;
+
+  box-shadow: 0 0 15px #ff4d6d;
+}
+
+.love-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px #ff1f5a;
+}
+
+/* ANIMATIONS */
 @keyframes grow-flower {
-  0% {
+  from {
     height: 0;
     opacity: 0;
   }
-  100% {
-    height: 55vmin;
-    opacity: 1;
-  }
 }
 
-@keyframes light-float {
-  0% {
-    opacity: 0;
-    transform: translateY(0);
-  }
-
-  50% {
-    opacity: 1;
-    transform: translateY(-15vmin);
-  }
-
-  100% {
-    opacity: 0;
-    transform: translateY(-30vmin);
-  }
-}
-
-/* Movement */
-@keyframes sway-1 {
+@keyframes moving-flower-1 {
   0%,100% { transform: rotate(2deg); }
   50% { transform: rotate(-2deg); }
 }
 
-@keyframes sway-2 {
+@keyframes moving-flower-2 {
   0%,100% { transform: rotate(15deg); }
-  50% { transform: rotate(12deg); }
+  50% { transform: rotate(10deg); }
 }
 
-@keyframes sway-3 {
+@keyframes moving-flower-3 {
   0%,100% { transform: rotate(-15deg); }
-  50% { transform: rotate(-18deg); }
+  50% { transform: rotate(-10deg); }
 }
 
-/* Apply Sway */
-.flower--1 {
-  animation: sway-1 4s linear infinite;
-}
+/* MOBILE FIX */
+@media (max-width: 600px){
 
-.flower--2 {
-  animation: sway-2 4s linear infinite;
-}
+  .flowers{
+    transform: scale(0.75);
+  }
 
-.flower--3 {
-  animation: sway-3 4s linear infinite;
-}
+  .love-box{
+    width: 90%;
+    padding: 18px;
+  }
 
-/* Disable before load */
-.not-loaded * {
-  animation-play-state: paused !important;
+  .love-box p{
+    font-size: 15px;
+  }
 }

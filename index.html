@@ -1,193 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Aditya ❤️ Anjila</title>
+<title>Aditya ❤️ Anjila</title>
 
-  <meta name="description" content="Happy Birthday Princess Anjila ❤️" />
-  <meta name="author" content="Aditya" />
+<link rel="stylesheet" href="style2.css">
 
-  <link rel="stylesheet" href="style2.css" />
+<meta name="description" content="Happy Birthday Princess Anjila ❤️">
+<meta name="author" content="Aditya">
 
-  <!-- Photo Style -->
-  <style>
-    body {
-      background: linear-gradient(to bottom right, #ffe6f0, #fff);
-      font-family: Arial, sans-serif;
-    }
+<!-- Redirect to flowers first (one time) -->
+<script>
+  if(!sessionStorage.getItem("visited")){
+    sessionStorage.setItem("visited","yes");
+    window.location.href="flowers.html";
+  }
+</script>
 
-    #slideshow {
-      max-width: 90%;
-      max-height: 420px;
-      object-fit: cover;
-      border-radius: 20px;
-      box-shadow: 0 0 15px rgba(255, 77, 109, 0.6);
-      margin: 15px auto;
-      display: block;
-    }
+<style>
+body{
+  background:#fbd2df;
+  text-align:center;
+  font-family:Arial;
+}
 
-    .button {
-      background: #ff4d6d;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      margin: 10px;
-      border-radius: 25px;
-      font-size: 16px;
-      cursor: pointer;
-    }
+h1{
+  margin-top:25px;
+  font-size:34px;
+}
 
-    .button:hover {
-      background: #ff1f4d;
-    }
+.image{
+  width:280px;
+  border-radius:20px;
+  margin:20px;
+  box-shadow:0 0 15px pink;
+}
 
-    .model {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.6);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
+.button{
+  background:#ff5c8d;
+  color:white;
+  border:none;
+  padding:12px 28px;
+  border-radius:25px;
+  font-size:18px;
+  margin:10px;
+  cursor:pointer;
+  transition:0.3s;
+}
 
-    .model-content {
-      background: white;
-      padding: 25px;
-      border-radius: 20px;
-      text-align: center;
-      max-width: 90%;
-    }
+.button:hover{
+  background:#ff2f6d;
+  transform:scale(1.05);
+}
 
-    .modelImg {
-      width: 180px;
-      margin: 15px 0;
-      border-radius: 15px;
-    }
+.model{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+}
 
-    .modelText {
-      font-size: 18px;
-      color: #ff4d6d;
-      font-weight: bold;
-    }
-  </style>
+.model-content{
+  background:white;
+  padding:25px;
+  border-radius:20px;
+  max-width:90%;
+}
+
+.modelImg{
+  width:180px;
+  border-radius:15px;
+}
+
+.modelText{
+  color:#ff4d6d;
+  font-size:18px;
+  font-weight:bold;
+}
+</style>
+
 </head>
 
 <body>
 
-  <!-- Music -->
-  <audio autoplay loop>
-    <source src="birthday.mp3" type="audio/mpeg">
-  </audio>
-
-  <!-- Credit -->
-  <div style="text-align:center; margin-top:10px; font-size:14px;">
-    Made with ❤️ by Aditya for Anjila 💕
-  </div>
-
-  <!-- Heading -->
-  <h1 style="text-align:center; color:#ff4d6d;">
-    Happy Birthday Princess Anjila 👑🎂❤️ <br>
-    Aditya ❤️ Anjila <br>
-    Will You Be My Valentine? 🥺💖
-  </h1>
-
-  <!-- Slideshow -->
-  <img id="slideshow" src="anjila1.jpeg" />
-
-  <!-- Sweet Line -->
-  <p style="text-align:center; color:#ff4d6d; font-size:18px;">
-    You are my favorite person in this universe 🌍💖
-  </p>
-
-  <!-- Buttons -->
-  <div style="text-align:center;">
-    <button class="button" onclick="showLove()">Yes 🥰</button>
-    <button class="button" onclick="showPlease()">No 😭</button>
-  </div>
-
-  <!-- Love Popup -->
-  <div id="loveBox" class="model">
-    <div class="model-content">
-
-      <p class="modelText">
-        Happy Birthday My Princess 👑🎂❤️ <br>
-        I Love You So Much 😘💖 <br>
-        Forever Yours – Aditya ❤️
-      </p>
-
-      <img class="modelImg"
-        src="https://takelessons.com/blog/wp-content/uploads/2013/07/happy-cat.gif">
-
-      <br>
-      <button class="button" onclick="closeLove()">Love You Too 🥰</button>
-
-    </div>
-  </div>
-
-  <!-- Please Popup -->
-  <div id="pleaseBox" class="model">
-    <div class="model-content">
-
-      <p class="modelText">
-        Please say Yes 🥺💔
-      </p>
-
-      <img class="modelImg"
-        src="https://media1.tenor.com/images/9413ffc5a11722a3cc456a88810750bd/tenor.gif">
-
-      <br>
-      <button class="button" onclick="showLove()">Okay Yes 😘</button>
-
-    </div>
-  </div>
-
-  <!-- Confetti -->
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-
-  <script>
-
-    // Confetti
-    setTimeout(() => {
-      confetti({
-        particleCount: 250,
-        spread: 120,
-        origin: { y: 0.6 }
-      });
-    }, 1000);
+<!-- Credit -->
+<p>Made with ❤️ by Aditya for Anjila 💕</p>
 
 
-    // Slideshow
-    let images = ["anjila1.jpeg", "anjila2.jpeg", "anjila3.jpeg"];
-    let index = 0;
+<!-- Heading -->
+<h1>
+Will You Be My Valentine, Anjila? 🥺💖
+</h1>
 
-    setInterval(() => {
-      index = (index + 1) % images.length;
-      document.getElementById("slideshow").src = images[index];
-    }, 2500);
+<p style="color:#ff4d6d;font-size:18px;">
+Happy Birthday My Princess 👑🎂❤️
+</p>
 
 
-    // Popups
-    function showLove() {
-      document.getElementById("loveBox").style.display = "flex";
-      document.getElementById("pleaseBox").style.display = "none";
-    }
+<!-- Slideshow -->
+<img src="anjila1.jpeg" class="image" id="mainImg">
 
-    function showPlease() {
-      document.getElementById("pleaseBox").style.display = "flex";
-      document.getElementById("loveBox").style.display = "none";
-    }
 
-    function closeLove() {
-      document.getElementById("loveBox").style.display = "none";
-    }
+<!-- Buttons -->
+<div id="btns">
 
-  </script>
+<button
+  class="button"
+  id="yesBtn"
+  onclick="showLove()"
+>
+Yes 🥰
+</button>
+
+<button
+  class="button"
+  id="noBtn"
+  onmouseover="runAway()"
+>
+No 😭
+</button>
+
+</div>
+
+
+<!-- Love Popup -->
+<div id="loveBox" class="model">
+
+<div class="model-content">
+
+<p class="modelText">
+Happy Birthday My Princess 👑🎂❤️ <br><br>
+
+Thank You For Choosing Me 😘💖 <br><br>
+
+You are my happiness, my smile, my forever 💕 <br>
+I promise to love you always ❤️
+</p>
+
+<img
+src="https://takelessons.com/blog/wp-content/uploads/2013/07/happy-cat.gif"
+class="modelImg"
+>
+
+<br><br>
+
+<button class="button" onclick="closeLove()">
+Love You Too 🥰
+</button>
+
+</div>
+</div>
+
+
+<!-- Script -->
+<script>
+
+let photos = ["anjila1.jpeg","anjila2.jpeg","anjila3.jpeg"];
+let i = 0;
+
+/* Slideshow */
+setInterval(()=>{
+  i = (i+1)%photos.length;
+  document.getElementById("mainImg").src = photos[i];
+},2500);
+
+
+/* Run Away Button */
+function runAway(){
+
+  let btn = document.getElementById("noBtn");
+
+  let x = Math.random() * (window.innerWidth - 120);
+  let y = Math.random() * (window.innerHeight - 120);
+
+  btn.style.position = "absolute";
+  btn.style.left = x + "px";
+  btn.style.top = y + "px";
+}
+
+
+/* Show Love */
+function showLove(){
+  document.getElementById("loveBox").style.display = "flex";
+}
+
+
+/* Close Love */
+function closeLove(){
+  document.getElementById("loveBox").style.display = "none";
+}
+
+</script>
 
 </body>
 </html>

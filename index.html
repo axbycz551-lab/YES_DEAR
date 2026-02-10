@@ -6,8 +6,6 @@
 
 <title>Aditya ❤️ Anjila</title>
 
-<link rel="stylesheet" href="style2.css">
-
 <meta name="description" content="Happy Birthday Princess Anjila ❤️">
 <meta name="author" content="Aditya">
 
@@ -39,104 +37,54 @@ h1{
   font-size:18px;
   margin:10px;
   cursor:pointer;
-  transition:0.3s;
 }
 
 .button:hover{
   background:#ff2f6d;
   transform:scale(1.05);
 }
-
-.model{
-  display:none;
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.6);
-  justify-content:center;
-  align-items:center;
-  z-index:1000;
-}
-
-.model-content{
-  background:white;
-  padding:25px;
-  border-radius:20px;
-  max-width:90%;
-}
-
-.modelImg{
-  width:180px;
-  border-radius:15px;
-}
-
-.modelText{
-  color:#ff4d6d;
-  font-size:18px;
-  font-weight:bold;
-}
 </style>
-
 </head>
 
 <body>
 
-<!-- Credit -->
 <p>Made with ❤️ by Aditya for Anjila 💕</p>
 
-
-<!-- Heading -->
-<h1>
-Will You Be My Valentine, Anjila? 🥺💖
-</h1>
+<h1>Will You Be My Valentine, Anjila? 🥺💖</h1>
 
 <p style="color:#ff4d6d;font-size:18px;">
 Happy Birthday My Princess 👑🎂❤️
 </p>
 
-
-<!-- Slideshow -->
 <img src="anjila1.jpeg" class="image" id="mainImg">
 
 
-<!-- Buttons -->
-<div id="btns">
+<div>
 
-<button
-  class="button"
-  id="yesBtn"
-  onclick="goToFlowers()"
->
+<button class="button" onclick="goToFlowers()">
 Yes 🥰
 </button>
 
-<button
-  class="button"
-  id="noBtn"
-  onmouseover="runAway()"
->
+<button class="button" id="noBtn" onmouseover="runAway()">
 No 😭
 </button>
 
 </div>
 
 
-<!-- Script -->
 <script>
 
+/* Slideshow */
 let photos = ["anjila1.jpeg","anjila2.jpeg","anjila3.jpeg"];
 let i = 0;
 
-/* Slideshow */
 setInterval(()=>{
   i = (i+1)%photos.length;
   document.getElementById("mainImg").src = photos[i];
 },2500);
 
 
-/* Run Away Button */
+/* No button run */
 function runAway(){
 
   let btn = document.getElementById("noBtn");
@@ -150,7 +98,7 @@ function runAway(){
 }
 
 
-/* Go To Flowers */
+/* YES → Flowers */
 function goToFlowers(){
   window.location.href = "flowers.html";
 }

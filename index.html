@@ -11,14 +11,6 @@
 <meta name="description" content="Happy Birthday Princess Anjila ❤️">
 <meta name="author" content="Aditya">
 
-<!-- Redirect to flowers first (one time) -->
-<script>
-  if(!sessionStorage.getItem("visited")){
-    sessionStorage.setItem("visited","yes");
-    window.location.href="flowers.html";
-  }
-</script>
-
 <style>
 body{
   background:#fbd2df;
@@ -115,7 +107,7 @@ Happy Birthday My Princess 👑🎂❤️
 <button
   class="button"
   id="yesBtn"
-  onclick="showLove()"
+  onclick="goToFlowers()"
 >
 Yes 🥰
 </button>
@@ -128,35 +120,6 @@ Yes 🥰
 No 😭
 </button>
 
-</div>
-
-
-<!-- Love Popup -->
-<div id="loveBox" class="model">
-
-<div class="model-content">
-
-<p class="modelText">
-Happy Birthday My Princess 👑🎂❤️ <br><br>
-
-Thank You For Choosing Me 😘💖 <br><br>
-
-You are my happiness, my smile, my forever 💕 <br>
-I promise to love you always ❤️
-</p>
-
-<img
-src="https://takelessons.com/blog/wp-content/uploads/2013/07/happy-cat.gif"
-class="modelImg"
->
-
-<br><br>
-
-<button class="button" onclick="closeLove()">
-Love You Too 🥰
-</button>
-
-</div>
 </div>
 
 
@@ -187,15 +150,9 @@ function runAway(){
 }
 
 
-/* Show Love */
-function showLove(){
-  document.getElementById("loveBox").style.display = "flex";
-}
-
-
-/* Close Love */
-function closeLove(){
-  document.getElementById("loveBox").style.display = "none";
+/* Go To Flowers */
+function goToFlowers(){
+  window.location.href = "flowers.html";
 }
 
 </script>

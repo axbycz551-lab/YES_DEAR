@@ -1,123 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Aditya ❤️ Anjila</title>
+    <title>Aditya ❤️ Anjila</title>
 
-<meta name="description" content="Happy Birthday Princess Anjila ❤️">
-<meta name="author" content="Aditya">
+    <meta name="description" content="Happy Birthday Princess Anjila ❤️">
+    <meta name="author" content="Aditya">
 
-<style>
-body{
-  background:#fbd2df;
-  text-align:center;
-  font-family:Arial, sans-serif;
-  margin:0;
-  padding:0;
-}
+    <style>
+        body {
+            background: #fbd2df;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-h1{
-  margin-top:25px;
-  font-size:34px;
-}
+        h1 {
+            margin-top: 25px;
+            font-size: 34px;
+        }
 
-.image{
-  width:280px;
-  border-radius:20px;
-  margin:20px;
-  box-shadow:0 0 15px pink;
-}
+        .image {
+            width: 280px;
+            border-radius: 20px;
+            margin: 20px;
+            box-shadow: 0 0 15px pink;
+        }
 
-.button{
-  background:#ff5c8d;
-  color:white;
-  border:none;
-  padding:12px 28px;
-  border-radius:25px;
-  font-size:18px;
-  margin:10px;
-  cursor:pointer;
-  transition:0.3s;
-}
+        .button {
+            background: #ff5c8d;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 25px;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-.button:hover{
-  background:#ff2f6d;
-  transform:scale(1.05);
-}
-</style>
+        .button:hover {
+            background: #ff2f6d;
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- Credit -->
-<p style="margin-top:15px;">
-Made with ❤️ by Aditya for Anjila 💕
-</p>
+    <!-- Credit -->
+    <p style="margin-top:15px;">
+        Made with ❤️ by Aditya for Anjila 💕
+    </p>
+
+    <!-- Heading -->
+    <h1>
+        Will You Be My Valentine, Anjila? 🥺💖
+    </h1>
+
+    <p style="color:#ff4d6d;font-size:18px;">
+        Happy Birthday My Princess 👑🎂❤️
+    </p>
+
+    <!-- Slideshow -->
+    <img src="anjila1.jpeg" class="image" id="mainImg" alt="Anjila">
+
+    <!-- Buttons -->
+    <div>
+
+        <button class="button" onclick="goToFlowers()">
+            Yes 🥰
+        </button>
+
+        <button class="button" id="noBtn" onmouseover="runAway()">
+            No 😭
+        </button>
+
+    </div>
+
+    <!-- Script -->
+    <script>
+
+        /* Slideshow */
+        let photos = ["anjila1.jpeg", "anjila2.jpeg", "anjila3.jpeg"];
+        let i = 0;
+
+        setInterval(function () {
+            i = (i + 1) % photos.length;
+            document.getElementById("mainImg").src = photos[i];
+        }, 2500);
 
 
-<!-- Heading -->
-<h1>
-Will You Be My Valentine, Anjila? 🥺💖
-</h1>
+        /* Run Away No Button */
+        function runAway() {
 
-<p style="color:#ff4d6d;font-size:18px;">
-Happy Birthday My Princess 👑🎂❤️
-</p>
+            let btn = document.getElementById("noBtn");
 
+            let x = Math.random() * (window.innerWidth - 120);
+            let y = Math.random() * (window.innerHeight - 120);
 
-<!-- Slideshow -->
-<img src="anjila1.jpeg" class="image" id="mainImg" alt="Anjila">
-
-
-<!-- Buttons -->
-<div>
-
-<button class="button" onclick="goToFlowers()">
-Yes 🥰
-</button>
-
-<button class="button" id="noBtn" onmouseover="runAway()">
-No 😭
-</button>
-
-</div>
+            btn.style.position = "absolute";
+            btn.style.left = x + "px";
+            btn.style.top = y + "px";
+        }
 
 
-<!-- Script -->
-<script>
+        /* YES → Flowers */
+        function goToFlowers() {
+            window.location.href = "flowers.html";
+        }
 
-/* Slideshow */
-let photos = ["anjila1.jpeg","anjila2.jpeg","anjila3.jpeg"];
-let i = 0;
-
-setInterval(function(){
-  i = (i + 1) % photos.length;
-  document.getElementById("mainImg").src = photos[i];
-}, 2500);
-
-
-/* Run Away No Button */
-function runAway(){
-
-  let btn = document.getElementById("noBtn");
-
-  let x = Math.random() * (window.innerWidth - 120);
-  let y = Math.random() * (window.innerHeight - 120);
-
-  btn.style.position = "absolute";
-  btn.style.left = x + "px";
-  btn.style.top = y + "px";
-}
-
-
-/* YES → Flowers */
-function goToFlowers(){
-  window.location.href = "flowers.html";
-}
-
-</script>
+    </script>
 
 </body>
+
 </html>

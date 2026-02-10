@@ -9,163 +9,170 @@
 <link rel="stylesheet" href="style1.css">
 
 <style>
-
-/* Background */
+/* Background Photo */
 body{
   margin:0;
+  padding:0;
   min-height:100vh;
-  background:
-    linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
-    url("small.jpeg") no-repeat center center/cover;
-  font-family:Arial, sans-serif;
-  color:white;
+
+  background: url("small.jpeg") no-repeat center center fixed;
+  background-size: contain; /* IMPORTANT: no zoom/cut */
+
+  background-color:#222; /* fills empty space */
+
+  font-family: Arial, sans-serif;
 }
 
-/* Main Container */
-.mainBox{
-  background:rgba(0,0,0,0.55);
-  border-radius:25px;
-  padding:25px;
-  margin:20px auto;
-  max-width:900px;
-  box-shadow:0 0 25px rgba(255,77,109,0.7);
+/* Dark overlay for readability */
+.overlay{
+  background: rgba(0,0,0,0.45);
+  min-height:100vh;
+  padding-bottom:40px;
 }
 
-h1{
-  color:#a2f7db;
+/* Header */
+.header{
   text-align:center;
+  padding-top:25px;
+  color:rgb(162,247,219);
+  text-shadow:0 0 10px black;
+}
+
+.header h1{
+  font-size:28px;
   line-height:1.4;
 }
 
-.loveText{
-  text-align:center;
-  font-size:20px;
-  line-height:1.7;
+/* Romantic Message */
+.love-msg{
+  max-width:90%;
+  margin:20px auto;
+  background:rgba(255,255,255,0.15);
+  padding:18px;
+  border-radius:15px;
   color:#ffd6e5;
-  margin-top:25px;
+  font-size:18px;
+  box-shadow:0 0 15px rgba(255,77,109,0.6);
 }
 
-.btnBox{
+/* Continue Button */
+.btn-box{
   text-align:center;
   margin:30px;
 }
 
-button{
+.btn-box a{
   background:#ff4d6d;
   color:white;
-  padding:14px 32px;
-  border:none;
-  border-radius:30px;
+  padding:12px 28px;
+  border-radius:25px;
+  text-decoration:none;
   font-size:18px;
-  cursor:pointer;
   box-shadow:0 0 12px rgba(255,77,109,0.8);
   transition:0.3s;
 }
 
-button:hover{
-  transform:scale(1.08);
-  background:#ff2f6d;
+.btn-box a:hover{
+  background:#ff2f5f;
+  transform:scale(1.05);
 }
-
 </style>
 
 </head>
 
-<body class="not-loaded">
+<body>
+
+<div class="overlay">
+
+  <!-- Header -->
+  <div class="header">
+
+    <h1>
+      Happy Birthday Princess Anjila 👑🎂❤️ <br>
+      A Little Floral Surprise from Aditya 🌸💐
+    </h1>
+
+  </div>
 
 
-<!-- Main Box -->
-<div class="mainBox">
+  <!-- Flowers -->
+  <div class="flowers">
+
+    <div class="flower flower--1">
+      <div class="flower__leafs flower__leafs--1">
+        <div class="flower__leaf flower__leaf--1"></div>
+        <div class="flower__leaf flower__leaf--2"></div>
+        <div class="flower__leaf flower__leaf--3"></div>
+        <div class="flower__leaf flower__leaf--4"></div>
+        <div class="flower__white-circle"></div>
+      </div>
+      <div class="flower__line"></div>
+    </div>
+
+    <div class="flower flower--2">
+      <div class="flower__leafs flower__leafs--2">
+        <div class="flower__leaf flower__leaf--1"></div>
+        <div class="flower__leaf flower__leaf--2"></div>
+        <div class="flower__leaf flower__leaf--3"></div>
+        <div class="flower__leaf flower__leaf--4"></div>
+        <div class="flower__white-circle"></div>
+      </div>
+      <div class="flower__line"></div>
+    </div>
+
+    <div class="flower flower--3">
+      <div class="flower__leafs flower__leafs--3">
+        <div class="flower__leaf flower__leaf--1"></div>
+        <div class="flower__leaf flower__leaf--2"></div>
+        <div class="flower__leaf flower__leaf--3"></div>
+        <div class="flower__leaf flower__leaf--4"></div>
+        <div class="flower__white-circle"></div>
+      </div>
+      <div class="flower__line"></div>
+    </div>
+
+  </div>
 
 
-<h1>
-Happy Birthday Princess Anjila 👑🎂❤️ <br>
-A Little Floral Surprise from Aditya 🌸💐
-</h1>
+  <!-- Love Message -->
+  <div class="love-msg">
+
+    My Love Anjila 💖,<br><br>
+
+    On your special day, I just want you to know  
+    you are the most beautiful part of my life 😘✨<br><br>
+
+    Your smile is my happiness,  
+    your love is my strength,  
+    and your heart is my home ❤️<br><br>
+
+    I promise to stand with you forever,  
+    love you endlessly,  
+    and make you smile every day 💞🥺<br><br>
+
+    Happy Birthday My Princess 👑💝  
+    — Yours Always, Aditya ❤️
+
+  </div>
 
 
-<!-- Flowers -->
-<div class="flowers">
+  <!-- Continue Button -->
+  <div class="btn-box">
 
-<div class="flower flower--1">
-<div class="flower__leafs flower__leafs--1">
-<div class="flower__leaf flower__leaf--1"></div>
-<div class="flower__leaf flower__leaf--2"></div>
-<div class="flower__leaf flower__leaf--3"></div>
-<div class="flower__leaf flower__leaf--4"></div>
-<div class="flower__white-circle"></div>
+    <a href="index.html">
+      Continue My Surprise 💖 →
+    </a>
+
+  </div>
+
 </div>
-</div>
-
-<div class="flower flower--2">
-<div class="flower__leafs flower__leafs--2">
-<div class="flower__leaf flower__leaf--1"></div>
-<div class="flower__leaf flower__leaf--2"></div>
-<div class="flower__leaf flower__leaf--3"></div>
-<div class="flower__leaf flower__leaf--4"></div>
-<div class="flower__white-circle"></div>
-</div>
-</div>
-
-<div class="flower flower--3">
-<div class="flower__leafs flower__leafs--3">
-<div class="flower__leaf flower__leaf--1"></div>
-<div class="flower__leaf flower__leaf--2"></div>
-<div class="flower__leaf flower__leaf--3"></div>
-<div class="flower__leaf flower__leaf--4"></div>
-<div class="flower__white-circle"></div>
-</div>
-</div>
-
-</div>
 
 
-<!-- Love Message -->
-<div class="loveText">
-
-My Love Anjila ❤️,<br><br>
-
-You are my happiness 💕  
-My smile 🌸  
-My forever 💖<br><br>
-
-Every heartbeat whispers your name 😘  
-Every dream has you in it 💞<br><br>
-
-I promise to love you always 👑❤️  
-
-Happy Birthday My Princess 🎂💋  
-— Your Aditya 💘
-
-</div>
-
-
-<!-- Button -->
-<div class="btnBox">
-
-<button onclick="goBack()">
-Continue My Surprise 💖 →
-</button>
-
-</div>
-
-
-</div>
-
-
+<!-- Auto Redirect -->
 <script>
-
-/* Auto Redirect */
-setTimeout(function(){
+setTimeout(()=>{
   window.location.href="index.html";
-},15000);
-
-
-/* Button Redirect */
-function goBack(){
-  window.location.href="index.html";
-}
-
+},20000);
 </script>
 
 <script src="main1.js"></script>

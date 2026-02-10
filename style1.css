@@ -1,200 +1,37 @@
-/* RESET */
-*,
-*::after,
-*::before {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
+<div class="container">
 
-/* ROOT */
-:root {
-  --dark-color: #000;
-}
+    <div class="title">
+        A Little Floral Surprise from Aditya 🌸💐
+    </div>
 
-/* BODY */
-body {
-  min-height: 100vh;
-  background: #000;
-  overflow-x: hidden;
-  font-family: Arial, sans-serif;
-}
+    <img src="your-image.png" alt="Surprise">
 
-/* BACKGROUND */
-.night {
-  position: fixed;
-  inset: 0;
-  background:
-    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-    url("image.jpeg");
-  background-size: cover;
-  background-position: center;
-  z-index: -1;
-}
+    <div class="flowers">
 
-/* HEADER */
-h1 {
-  text-align: center;
-  margin-top: 70px;
-  color: #a7ffee;
-  font-size: 32px;
-  text-shadow: 0 0 15px rgba(255,255,255,0.4);
-  position: relative;
-  z-index: 100;
-}
+        <div class="flower">
+            <div class="stem"></div>
+            <div class="bud"></div>
+            <div class="petal p1"></div>
+            <div class="petal p2"></div>
+            <div class="petal p3"></div>
+        </div>
 
-/* SUB TEXT */
-.subtitle {
-  text-align: center;
-  color: #ffb3c6;
-  font-size: 18px;
-  margin-top: 15px;
-  position: relative;
-  z-index: 100;
-}
+        <div class="flower">
+            <div class="stem"></div>
+            <div class="bud"></div>
+            <div class="petal p1"></div>
+            <div class="petal p2"></div>
+            <div class="petal p3"></div>
+        </div>
 
-/* MESSAGE BOX */
-.message-box {
-  max-width: 90%;
-  margin: 40px auto;
-  padding: 25px;
-  background: rgba(0,0,0,0.6);
-  border-radius: 20px;
-  color: #ffd6e0;
-  line-height: 1.6;
-  box-shadow: 0 0 20px rgba(255,77,109,0.4);
-  position: relative;
-  z-index: 100;
-}
+        <div class="flower">
+            <div class="stem"></div>
+            <div class="bud"></div>
+            <div class="petal p1"></div>
+            <div class="petal p2"></div>
+            <div class="petal p3"></div>
+        </div>
 
-/* CONTINUE BUTTON */
-.continue-btn {
-  display: block;
-  width: fit-content;
-  margin: 30px auto 50px;
-  background: #ff4d6d;
-  color: white;
-  padding: 14px 30px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-size: 18px;
-  box-shadow: 0 0 12px rgba(255,77,109,0.6);
-  transition: 0.3s;
-  position: relative;
-  z-index: 100;
-}
+    </div>
 
-.continue-btn:hover {
-  background: #ff2f6d;
-  transform: scale(1.05);
-}
-
-/* FLOWERS CONTAINER */
-.flowers {
-  position: relative;
-  margin-top: 340px;   /* PUSH DOWN */
-  margin-bottom: 10vh;
-  transform: scale(0.8);
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* FLOWER */
-.flower {
-  position: absolute;
-  bottom: 0;
-  transform-origin: bottom center;
-  z-index: 5;
-}
-
-/* FLOWER POSITIONS */
-.flower--1 {
-  left: 35%;
-}
-
-.flower--2 {
-  left: 50%;
-}
-
-.flower--3 {
-  left: 65%;
-}
-
-/* STEM */
-.flower__line {
-  height: 55vmin;
-  width: 1.5vmin;
-  background: linear-gradient(to top, #14757a, #39c6d6);
-  animation: grow 3s ease-out backwards;
-}
-
-/* PETALS */
-.flower__leaf {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 8vmin;
-  height: 11vmin;
-  background: linear-gradient(to top, #ff0040, #ff4d6d);
-  border-radius: 50%;
-  transform-origin: bottom center;
-  opacity: 0.9;
-}
-
-/* PETAL POSITIONS */
-.flower__leaf--1 {
-  transform: translate(-10%,0) rotate(35deg);
-}
-
-.flower__leaf--2 {
-  transform: translate(-50%,0) rotate(0deg);
-}
-
-.flower__leaf--3 {
-  transform: translate(-90%,0) rotate(-35deg);
-}
-
-.flower__leaf--4 {
-  transform: translate(-50%,15%) rotate(90deg);
-}
-
-/* CENTER */
-.flower__white-circle {
-  position: absolute;
-  left: -3vmin;
-  top: -2vmin;
-  width: 7vmin;
-  height: 4vmin;
-  background: gold;
-  border-radius: 50%;
-}
-
-/* ANIMATION */
-@keyframes grow {
-  from {
-    height: 0;
-  }
-}
-
-/* MOBILE FIX */
-@media (max-width: 600px) {
-
-  h1 {
-    font-size: 26px;
-    margin-top: 50px;
-  }
-
-  .flowers {
-    margin-top: 260px;
-    transform: scale(0.7);
-  }
-
-  .message-box {
-    font-size: 15px;
-  }
-}
-
-/* STOP INITIAL FREEZE */
-.not-loaded * {
-  animation-play-state: running !important;
-}
+</div>

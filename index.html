@@ -13,7 +13,9 @@
 body{
   background:#fbd2df;
   text-align:center;
-  font-family:Arial;
+  font-family:Arial, sans-serif;
+  margin:0;
+  padding:0;
 }
 
 h1{
@@ -37,6 +39,7 @@ h1{
   font-size:18px;
   margin:10px;
   cursor:pointer;
+  transition:0.3s;
 }
 
 .button:hover{
@@ -48,17 +51,27 @@ h1{
 
 <body>
 
-<p>Made with ❤️ by Aditya for Anjila 💕</p>
+<!-- Credit -->
+<p style="margin-top:15px;">
+Made with ❤️ by Aditya for Anjila 💕
+</p>
 
-<h1>Will You Be My Valentine, Anjila? 🥺💖</h1>
+
+<!-- Heading -->
+<h1>
+Will You Be My Valentine, Anjila? 🥺💖
+</h1>
 
 <p style="color:#ff4d6d;font-size:18px;">
 Happy Birthday My Princess 👑🎂❤️
 </p>
 
-<img src="anjila1.jpeg" class="image" id="mainImg">
+
+<!-- Slideshow -->
+<img src="anjila1.jpeg" class="image" id="mainImg" alt="Anjila">
 
 
+<!-- Buttons -->
 <div>
 
 <button class="button" onclick="goToFlowers()">
@@ -72,19 +85,20 @@ No 😭
 </div>
 
 
+<!-- Script -->
 <script>
 
 /* Slideshow */
 let photos = ["anjila1.jpeg","anjila2.jpeg","anjila3.jpeg"];
 let i = 0;
 
-setInterval(()=>{
-  i = (i+1)%photos.length;
+setInterval(function(){
+  i = (i + 1) % photos.length;
   document.getElementById("mainImg").src = photos[i];
-},2500);
+}, 2500);
 
 
-/* No button run */
+/* Run Away No Button */
 function runAway(){
 
   let btn = document.getElementById("noBtn");

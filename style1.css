@@ -1,37 +1,97 @@
-<div class="container">
+/* Flower Container */
+.flowers {
+    position: absolute;
+    top: 60px; /* below title */
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    pointer-events: none;
+}
 
-    <div class="title">
-        A Little Floral Surprise from Aditya 🌸💐
-    </div>
+/* Single Flower */
+.flower {
+    position: relative;
+    width: 70px;
+    height: 220px;
+}
 
-    <img src="your-image.png" alt="Surprise">
+/* Stem (Top → Down) */
+.stem {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 5px;
+    height: 150px;
+    background: linear-gradient(#5ee7df, #00b4d8);
+    transform: translateX(-50%);
+    border-radius: 5px;
+}
 
-    <div class="flowers">
+/* Bud (Top) */
+.bud {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    width: 30px;
+    height: 18px;
+    background: #ffd60a;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px rgba(255, 214, 10, 0.8);
+}
 
-        <div class="flower">
-            <div class="stem"></div>
-            <div class="bud"></div>
-            <div class="petal p1"></div>
-            <div class="petal p2"></div>
-            <div class="petal p3"></div>
-        </div>
+/* Flower Head (Bottom) */
+.head {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 90px;
+    height: 70px;
+    transform: translateX(-50%);
+}
 
-        <div class="flower">
-            <div class="stem"></div>
-            <div class="bud"></div>
-            <div class="petal p1"></div>
-            <div class="petal p2"></div>
-            <div class="petal p3"></div>
-        </div>
+/* Petals */
+.petal {
+    position: absolute;
+    width: 35px;
+    height: 45px;
+    background: linear-gradient(135deg, #ff4d6d, #ff006e);
+    border-radius: 50%;
+    opacity: 0.95;
+}
 
-        <div class="flower">
-            <div class="stem"></div>
-            <div class="bud"></div>
-            <div class="petal p1"></div>
-            <div class="petal p2"></div>
-            <div class="petal p3"></div>
-        </div>
+/* Petal Positions */
+.p1 {
+    left: 0;
+    bottom: 0;
+}
 
-    </div>
+.p2 {
+    left: 28px;
+    bottom: 12px;
+}
 
-</div>
+.p3 {
+    right: 0;
+    bottom: 0;
+}
+
+.p4 {
+    left: 28px;
+    bottom: -10px;
+}
+
+/* Soft Swing Animation */
+.flower {
+    animation: swing 4s ease-in-out infinite;
+}
+
+.flower:nth-child(2) { animation-delay: .5s; }
+.flower:nth-child(3) { animation-delay: 1s; }
+
+@keyframes swing {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(2deg); }
+    100% { transform: rotate(0deg); }
+}

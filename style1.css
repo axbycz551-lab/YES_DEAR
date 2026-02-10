@@ -1,42 +1,99 @@
-*,
-*::after,
-*::before {
-  padding: 0;
+/* RESET */
+* {
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-:root {
-  --dark-color: #000;
-}
-
+/* BODY */
 body {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
   min-height: 100vh;
-  overflow: hidden;
-  font-family: "Segoe UI", sans-serif;
+  overflow-x: hidden;
+  background: #000;
 }
 
-/* FULL SCREEN BACKGROUND */
+/* BACKGROUND IMAGE */
 .night {
   position: fixed;
   inset: 0;
   z-index: -1;
 
   background:
-    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-    url("small.jpeg") center/cover no-repeat;
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("image.jpeg");
 
-  filter: blur(0.2vmin);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-/* FLOWERS CONTAINER */
+/* HEADER TEXT */
+h1 {
+  text-align: center;
+  margin-top: 40px;
+  color: #a7ffee;
+  font-size: 32px;
+  text-shadow: 0 0 15px rgba(255,255,255,0.4);
+  position: relative;
+  z-index: 10;
+}
+
+/* SUB TITLE */
+.subtitle {
+  text-align: center;
+  color: #ffd1dc;
+  margin: 10px 20px;
+  font-size: 18px;
+  position: relative;
+  z-index: 10;
+}
+
+/* LOVE MESSAGE BOX */
+.message-box {
+  max-width: 90%;
+  margin: 30px auto;
+  background: rgba(0,0,0,0.6);
+  padding: 25px;
+  border-radius: 20px;
+  color: #ffd1dc;
+  font-size: 17px;
+  line-height: 1.6;
+  box-shadow: 0 0 20px rgba(255,77,109,0.5);
+  position: relative;
+  z-index: 10;
+}
+
+/* CONTINUE BUTTON */
+.continue-btn {
+  display: block;
+  margin: 25px auto 40px;
+  padding: 14px 28px;
+  background: #ff4d6d;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 18px;
+  text-align: center;
+  width: fit-content;
+  box-shadow: 0 0 15px rgba(255,77,109,0.6);
+  transition: 0.3s;
+  position: relative;
+  z-index: 10;
+}
+
+.continue-btn:hover {
+  background: #ff1f50;
+  transform: scale(1.05);
+}
+
+/* FLOWER CONTAINER */
 .flowers {
   position: relative;
-  transform: scale(0.9);
+  margin-top: 180px;     /* PUSH FLOWERS DOWN */
   margin-bottom: 5vh;
+  transform: scale(0.85);
+  z-index: 1;
 }
 
 /* FLOWER BASE */
@@ -44,152 +101,77 @@ body {
   position: absolute;
   bottom: 0;
   transform-origin: bottom center;
-  z-index: 10;
-  --fl-speed: 0.8s;
+  z-index: 2;
 }
 
 /* FLOWER POSITIONS */
 .flower--1 {
-  left: 40%;
-  animation: moving-flower-1 4s linear infinite;
+  left: 25%;
 }
 
 .flower--2 {
   left: 50%;
-  transform: rotate(15deg);
-  animation: moving-flower-2 4s linear infinite;
+  transform: translateX(-50%) rotate(15deg);
 }
 
 .flower--3 {
-  left: 60%;
-  transform: rotate(-15deg);
-  animation: moving-flower-3 4s linear infinite;
+  left: 70%;
+  transform: rotate(-12deg);
 }
 
 /* STEM */
 .flower__line {
   height: 55vmin;
-  width: 1.3vmin;
-  background: linear-gradient(to top, #0f7a7a, #39c6d6);
-  animation: grow-flower 3s backwards;
+  width: 1.4vmin;
+  background: linear-gradient(to top, #14757a, #39c6d6);
+  border-radius: 10px;
 }
 
 /* PETALS */
 .flower__leaf {
   position: absolute;
-  bottom: 0;
-  left: 50%;
   width: 7vmin;
   height: 10vmin;
+  background: linear-gradient(to top, #ff0000, #ff4d4d);
   border-radius: 50%;
-  background: linear-gradient(to top, #ff0040, #ff3366);
-  transform-origin: bottom center;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
   opacity: 0.9;
 }
 
-.flower__leaf--1 { transform: translate(-50%,0) rotate(0deg); }
-.flower__leaf--2 { transform: translate(-50%,0) rotate(90deg); }
-.flower__leaf--3 { transform: translate(-50%,0) rotate(180deg); }
-.flower__leaf--4 { transform: translate(-50%,0) rotate(270deg); }
+/* PETAL POSITIONS */
+.flower__leaf--1 { transform: translateX(-50%) rotate(0deg); }
+.flower__leaf--2 { transform: translateX(-50%) rotate(60deg); }
+.flower__leaf--3 { transform: translateX(-50%) rotate(120deg); }
+.flower__leaf--4 { transform: translateX(-50%) rotate(180deg); }
 
 /* CENTER */
 .flower__white-circle {
   position: absolute;
-  left: -2vmin;
-  top: -2vmin;
-  width: 5vmin;
-  height: 5vmin;
+  width: 3.5vmin;
+  height: 3.5vmin;
+  background: yellow;
   border-radius: 50%;
-  background: gold;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-/* MESSAGE BOX */
-.love-box {
-  max-width: 90%;
-  width: 420px;
-  padding: 25px;
+/* MOBILE */
+@media (max-width: 768px) {
 
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(10px);
-
-  border-radius: 20px;
-  border: 2px solid #ff4d6d;
-
-  box-shadow: 0 0 25px #ff4d6d;
-
-  text-align: center;
-  color: #fff;
-
-  margin-bottom: 20vh;
-}
-
-/* TEXT */
-.love-box p {
-  font-size: 17px;
-  line-height: 1.7;
-  color: #ffd1dc;
-}
-
-/* BUTTON */
-.love-btn {
-  margin-top: 20px;
-
-  background: linear-gradient(135deg,#ff4d6d,#ff1f5a);
-  color: white;
-
-  border: none;
-  padding: 12px 28px;
-
-  border-radius: 30px;
-  font-size: 18px;
-
-  cursor: pointer;
-  transition: 0.3s;
-
-  box-shadow: 0 0 15px #ff4d6d;
-}
-
-.love-btn:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 25px #ff1f5a;
-}
-
-/* ANIMATIONS */
-@keyframes grow-flower {
-  from {
-    height: 0;
-    opacity: 0;
-  }
-}
-
-@keyframes moving-flower-1 {
-  0%,100% { transform: rotate(2deg); }
-  50% { transform: rotate(-2deg); }
-}
-
-@keyframes moving-flower-2 {
-  0%,100% { transform: rotate(15deg); }
-  50% { transform: rotate(10deg); }
-}
-
-@keyframes moving-flower-3 {
-  0%,100% { transform: rotate(-15deg); }
-  50% { transform: rotate(-10deg); }
-}
-
-/* MOBILE FIX */
-@media (max-width: 600px){
-
-  .flowers{
-    transform: scale(0.75);
+  h1 {
+    font-size: 24px;
   }
 
-  .love-box{
-    width: 90%;
-    padding: 18px;
-  }
-
-  .love-box p{
+  .message-box {
     font-size: 15px;
   }
+
+  .flowers {
+    transform: scale(0.7);
+    margin-top: 150px;
+  }
+
 }

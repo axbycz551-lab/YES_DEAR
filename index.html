@@ -9,78 +9,126 @@
 <meta name="description" content="Happy Birthday Princess Anjila ❤️">
 <meta name="author" content="Aditya">
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
-body{
-  background:#fbd2df;
-  text-align:center;
-  font-family:Arial, sans-serif;
+
+*{
   margin:0;
   padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
 }
 
+/* Background */
+body{
+  min-height:100vh;
+  background:linear-gradient(135deg,#ffafbd,#ffc3a0);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* Main Card */
+.container{
+  background:rgba(255,255,255,0.2);
+  backdrop-filter:blur(10px);
+  padding:30px 25px;
+  border-radius:25px;
+  width:350px;
+  max-width:90%;
+  text-align:center;
+  box-shadow:0 0 30px rgba(255,105,180,0.5);
+}
+
+/* Credit */
+.credit{
+  font-size:14px;
+  color:#444;
+  margin-bottom:10px;
+}
+
+/* Title */
 h1{
-  margin-top:25px;
-  font-size:34px;
+  font-size:26px;
+  margin-bottom:10px;
+  color:#c9184a;
 }
 
+/* Subtitle */
+.subtitle{
+  color:#ff4d6d;
+  font-size:17px;
+  margin-bottom:15px;
+}
+
+/* Image */
 .image{
-  width:280px;
+  width:100%;
+  max-width:260px;
   border-radius:20px;
-  margin:20px;
-  box-shadow:0 0 15px pink;
+  margin:15px auto;
+  box-shadow:0 0 20px rgba(255,100,150,0.5);
+}
+
+/* Buttons */
+.buttons{
+  margin-top:15px;
 }
 
 .button{
   background:#ff5c8d;
   color:white;
   border:none;
-  padding:12px 28px;
-  border-radius:25px;
-  font-size:18px;
-  margin:10px;
+  padding:12px 26px;
+  border-radius:30px;
+  font-size:17px;
+  margin:8px;
   cursor:pointer;
   transition:0.3s;
 }
 
 .button:hover{
   background:#ff2f6d;
-  transform:scale(1.05);
+  transform:scale(1.07);
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- Credit -->
-<p style="margin-top:15px;">
-Made with ❤️ by Aditya for Anjila 💕
-</p>
+<div class="container">
 
+  <!-- Credit -->
+  <div class="credit">
+    Made with ❤️ by Aditya for Anjila 💕
+  </div>
 
-<!-- Heading -->
-<h1>
-Will You Be My Valentine, Anjila? 🥺💖
-</h1>
+  <!-- Heading -->
+  <h1>
+    Will You Be My Valentine, Anjila? 🥺💖
+  </h1>
 
-<p style="color:#ff4d6d;font-size:18px;">
-Happy Birthday My Princess 👑🎂❤️
-</p>
+  <div class="subtitle">
+    Happy Birthday My Princess 👑🎂❤️
+  </div>
 
+  <!-- Slideshow -->
+  <img src="anjila1.jpeg" class="image" id="mainImg" alt="Anjila">
 
-<!-- Slideshow -->
-<img src="anjila1.jpeg" class="image" id="mainImg" alt="Anjila">
+  <!-- Buttons -->
+  <div class="buttons">
 
+    <button class="button" onclick="goToFlowers()">
+      Yes 🥰
+    </button>
 
-<!-- Buttons -->
-<div>
+    <button class="button" id="noBtn" onmouseover="runAway()">
+      No 😭
+    </button>
 
-<button class="button" onclick="goToFlowers()">
-Yes 🥰
-</button>
-
-<button class="button" id="noBtn" onmouseover="runAway()">
-No 😭
-</button>
+  </div>
 
 </div>
 
